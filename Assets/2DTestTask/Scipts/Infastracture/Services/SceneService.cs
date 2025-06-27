@@ -5,7 +5,7 @@ using Constants;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Trell.TwoDTestTask.Infrastructure.Service
+namespace Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.Service
 {
     public class SceneService : ISceneService
     {

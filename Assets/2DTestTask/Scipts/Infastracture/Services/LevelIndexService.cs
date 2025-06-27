@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Trell.TwoDTestTask.Infrastructure.Service
+namespace Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.Service
 {
     public class LevelIndexService : ILevelIndexService
     {

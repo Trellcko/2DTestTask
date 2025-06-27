@@ -1,6 +1,7 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 using Constants;
 using Trell.TwoDTestTask.Infrastructure.Factories;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure;
 using UnityEngine;
 
 namespace Trell.TwoDTestTask.Infrastructure.States
@@ -22,8 +23,11 @@ namespace Trell.TwoDTestTask.Infrastructure.States
             _factory.CleanUp();
         }
 
-        private void OnLoaded()
+        private async void OnLoaded()
         {
+            await Task.Yield();
+            _factory.RefreshContainer();
+            _factory.CreatePlayer(Vector2.zero);
             GoToState<GameLoopState>();
         }
     }

@@ -1,3 +1,5 @@
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure;
+
 namespace Trell.TwoDTestTask.Infrastructure.States
 {
     public abstract class BaseStateWithPayLoad<TPayLoad> : BaseState

@@ -1,7 +1,10 @@
 ﻿using Constants;
+using Trell.TwoDTestTask.Infrastructure;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.States;
 using Trell.TwoDTestTask.Infrastructure.States;
 
-namespace Trell.TwoDTestTask.Infrastructure
+namespace Trell.TwoDTestTask.Service.Infrastructure
 {
     public class BootstrapSceneLoadState : BaseStateWithoutPayload
     {

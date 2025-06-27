@@ -1,5 +1,6 @@
 ﻿using Constants;
-using Trell.TwoDTestTask.Infrastructure.States;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.States;
 
 namespace Trell.TwoDTestTask.Infrastructure.States
 {

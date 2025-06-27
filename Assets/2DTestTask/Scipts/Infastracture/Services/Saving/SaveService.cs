@@ -1,7 +1,7 @@
-﻿using Trell.TwoDTestTask.Extension;
+﻿using Trell.TwoDTestTask.Infrastructure.Service.Extension;
 using UnityEngine;
 
-namespace Trell.TwoDTestTask.Infrastructure.Saving
+namespace Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.Saving
 {
     public class SaveService : ISaveService
     {

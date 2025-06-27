@@ -1,6 +1,10 @@
 using Trell.TwoDTestTask.Infrastructure.Factories;
 using Trell.TwoDTestTask.Infrastructure.Service;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.Service;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.States;
 using Trell.TwoDTestTask.Infrastructure.States;
+using Trell.TwoDTestTask.Service.Infrastructure;
 using Zenject;
 
 namespace Trell.TwoDTestTask.Infrastructure

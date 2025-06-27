@@ -3,15 +3,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Trell.TwoDTestTask.UI
+namespace Trell.TwoDTestTask.Infrastructure.Service.UI
 {
     [RequireComponent(typeof(Button))]
-    public class ButtonWrapper : MonoBehaviour, IPointerDownHandler
+    public class ButtonWrapper : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         private  Button _button;
         
         public event Action Clicked;
         public event Action Pressed;
+        
+        private bool _isPressed;
+        
         private void Awake()
         {
             _button = GetComponent<Button>();
@@ -27,6 +30,15 @@ namespace Trell.TwoDTestTask.UI
             _button.onClick.RemoveListener(OnClicked);
         }
 
+        private void Update()
+        {
+            if (_isPressed)
+            {
+                InvokePressLogic();
+                Pressed?.Invoke();
+            }
+        }
+
         public void Enable()
         {
             _button.interactable = true;
@@ -39,8 +51,7 @@ namespace Trell.TwoDTestTask.UI
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            InvokePressLogic();
-            Pressed?.Invoke();
+            _isPressed = true;
         }
 
         protected virtual void InvokeClickLogic(){ }
@@ -51,6 +62,11 @@ namespace Trell.TwoDTestTask.UI
         {
             InvokeClickLogic();
             Clicked?.Invoke();
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            _isPressed = false;
         }
     }
 }

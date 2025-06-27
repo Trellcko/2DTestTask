@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Trell.TwoDTestTask.Extension
+namespace Trell.TwoDTestTask.Infrastructure.Service.Extension
 {
     public static class DataExtension
     {

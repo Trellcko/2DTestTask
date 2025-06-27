@@ -1,6 +1,9 @@
 using Trell.TwoDTestTask.Infrastructure.AssetManagment;
 using Trell.TwoDTestTask.Infrastructure.Factories;
 using Trell.TwoDTestTask.Infrastructure.Service;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.AssetManagment;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.Service;
 using Zenject;
 
 namespace Trell.TwoDTestTask.Infrastructure.Installer

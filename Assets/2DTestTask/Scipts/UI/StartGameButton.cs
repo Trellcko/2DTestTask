@@ -1,8 +1,8 @@
-using Trell.TwoDTestTask.Infrastructure;
-using Trell.TwoDTestTask.Infrastructure.Service;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure;
+using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.Service;
 using Zenject;
 
-namespace Trell.TwoDTestTask.UI
+namespace Trell.TwoDTestTask.Infrastructure.Service.UI
 {
     public class StartGameButton : ButtonWrapper
     {

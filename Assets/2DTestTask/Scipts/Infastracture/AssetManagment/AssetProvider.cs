@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Trell.TwoDTestTask.Infrastructure.AssetManagment;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace Trell.TwoDTestTask.Infrastructure.AssetManagment
+namespace Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.AssetManagment
 {
     public class AssetProvider : IAssetProvider
     {

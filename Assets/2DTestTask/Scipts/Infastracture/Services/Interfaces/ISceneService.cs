@@ -1,7 +1,7 @@
 using System;
 using Constants;
 
-namespace Trell.TwoDTestTask.Infrastructure
+namespace Trell.TwoDTestTask.Infrastructure.Service.Infrastructure
 {
     public interface ISceneService
     {

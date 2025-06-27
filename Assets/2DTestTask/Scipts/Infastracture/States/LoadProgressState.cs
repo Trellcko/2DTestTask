@@ -1,6 +1,7 @@
-﻿using Trell.TwoDTestTask.Infrastructure.Saving;
+﻿using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.Saving;
+using Trell.TwoDTestTask.Infrastructure.States;
 
-namespace Trell.TwoDTestTask.Infrastructure.States
+namespace Trell.TwoDTestTask.Infrastructure.Service.Infrastructure.States
 {
     public class LoadProgressState : BaseStateWithoutPayload
     {
