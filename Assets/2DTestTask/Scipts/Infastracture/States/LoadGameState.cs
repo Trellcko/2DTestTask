@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Trell.TwoDTestTask.Infrastructure.States
 {
-    public class LoadGameState : BaseStateWithoutPayload
+    public class LoadGameState : BaseStateWithPayLoad<int>
     {
         private readonly ISceneService _sceneService;
         private IGameFactory _factory;
@@ -16,7 +16,7 @@ namespace Trell.TwoDTestTask.Infrastructure.States
             _sceneService = sceneService;
         }
 
-        public override void  Enter()
+        public override void  Enter(int level)
         {
             _sceneService.Load(SceneName.GameScene, OnLoaded);
             _factory.CleanUp();

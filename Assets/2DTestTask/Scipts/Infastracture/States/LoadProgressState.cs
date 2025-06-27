@@ -13,7 +13,6 @@ namespace Trell.TwoDTestTask.Infrastructure.States
 
         public override void Enter()
         {
-            GoToState<LoadGameState>();
         }
 
         private static SaveData InitNew() => 

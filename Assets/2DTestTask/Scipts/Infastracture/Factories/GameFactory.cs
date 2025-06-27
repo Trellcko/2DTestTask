@@ -1,4 +1,5 @@
 using Trell.TwoDTestTask.Infrastructure.AssetManagment;
+using Trell.TwoDTestTask.Infrastructure.Service;
 using Zenject;
 
 namespace Trell.TwoDTestTask.Infrastructure.Factories

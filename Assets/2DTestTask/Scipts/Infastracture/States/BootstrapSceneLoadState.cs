@@ -14,7 +14,7 @@ namespace Trell.TwoDTestTask.Infrastructure
 
         public override void Enter()
         {
-            _sceneService.Load(SceneName.BootstrapScene, GoToState<LoadGameState>);
+            _sceneService.Load(SceneName.BootstrapScene, GoToState<MainMenuState>);
         }
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface IGameBehaviour
     {
-        void ReloadGame();
+        void LoadCurrentLevel();
     }
 }

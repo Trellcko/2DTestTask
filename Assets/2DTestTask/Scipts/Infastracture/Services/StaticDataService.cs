@@ -1,3 +1,4 @@
+using Trell.TwoDTestTask.Infrastructure.Service;
 using UnityEngine;
 
 namespace Trell.TwoDTestTask.Infrastructure
