@@ -95,7 +95,6 @@ namespace Trell.TwoDTestTask.Gameplay.Player
 
         private void Rotate(float x)
         {
-            Debug.Log(x);
             if (x == 0)
                 return;
             int direction = x > 0 ? -1 : 1;

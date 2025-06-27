@@ -84,7 +84,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.4354992
+        value: 0.39927483
         inSlope: -0.2768089
         outSlope: -0.2768089
         tangentMode: 0
@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 3657091154640554089}
   - component: {fileID: 7431246240775655881}
   - component: {fileID: 6187229090931879745}
+  - component: {fileID: 6249982722438781966}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
@@ -264,6 +265,7 @@ Transform:
   - {fileID: 22648258150714900}
   - {fileID: 5489705856618156371}
   - {fileID: 8767545895157346208}
+  - {fileID: 7084342927296227774}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3657091154640554089
@@ -341,6 +343,63 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6249982722438781966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348021401032310558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e694d3e32223af47ba92290c9a759f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6998905430658457276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7084342927296227774}
+  - component: {fileID: 7466293782369616773}
+  m_Layer: 7
+  m_Name: BulletGroundCollisionHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7084342927296227774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6998905430658457276}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4950931520512170492}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7466293782369616773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6998905430658457276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30038d427b434f1c99aaf66a678afb5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletCollisionEventInvoker: {fileID: 6249982722438781966}
 --- !u!1 &8949095129781131623
 GameObject:
   m_ObjectHideFlags: 0

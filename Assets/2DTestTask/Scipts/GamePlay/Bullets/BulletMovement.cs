@@ -13,10 +13,7 @@ namespace Trell
         {
             _speed = speed;
             _direction = direction;
-        }
-        
-        private void Update()
-        {
+            
             _rigidbody2D.velocity = _speed * _direction * Vector2.right;
         }
     }

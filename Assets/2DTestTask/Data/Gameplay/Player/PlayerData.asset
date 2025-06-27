@@ -17,5 +17,6 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  <BulletCount>k__BackingField: 7
   <Speed>k__BackingField: 3
-  <JumpForce>k__BackingField: 5
+  <JumpForce>k__BackingField: 10
