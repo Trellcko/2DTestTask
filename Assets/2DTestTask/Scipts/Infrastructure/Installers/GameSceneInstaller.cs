@@ -16,8 +16,8 @@ namespace Trell.TwoDTestTask.Infrastructure.Installer
 
         private void CheckingGroundServiceBind()
         {
-            Container.Bind<IGroundCheckService>()
-                .To<GroundCheckService>()
+            Container.Bind<IOverlapCheckService>()
+                .To<OverlapCheckService>()
                 .AsSingle();
         }
 

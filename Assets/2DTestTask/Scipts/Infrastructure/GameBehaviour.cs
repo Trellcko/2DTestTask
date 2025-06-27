@@ -1,3 +1,4 @@
+using Trell.TwoDTestTask.Infrastructure.AssetManagment;
 using Trell.TwoDTestTask.Infrastructure.Factories;
 using Trell.TwoDTestTask.Infrastructure.Service;
 using Trell.TwoDTestTask.Infrastructure.Service.Infrastructure;
@@ -17,11 +18,14 @@ namespace Trell.TwoDTestTask.Infrastructure
         private IGameFactory _gameFactory;
         private IStaticDataService _staticDataService;
         private ILevelIndexService _levelIndexService;
+        private IAssetProvider _assetProvider;
 
         [Inject]
         private void Construct(ISceneService sceneService, IGameFactory gameFactory, 
-            IStaticDataService staticDataService, ILevelIndexService levelIndexService)
+            IStaticDataService staticDataService, ILevelIndexService levelIndexService,
+            IAssetProvider assetProvider)
         {
+            _assetProvider = assetProvider;
             _levelIndexService = levelIndexService;
             _staticDataService = staticDataService;
             _gameFactory = gameFactory;
@@ -43,7 +47,7 @@ namespace Trell.TwoDTestTask.Infrastructure
             _stateMachine.AddState(
                 new BootstrapSceneLoadState(_stateMachine, _sceneService),
                 new MainMenuState(_stateMachine, _sceneService),
-                new LoadGameState(_stateMachine, _sceneService, _gameFactory),
+                new LoadGameState(_stateMachine, _sceneService, _gameFactory, _assetProvider, _staticDataService),
                 new GameLoopState(_stateMachine, _gameFactory, _staticDataService),
                 new LostState(_stateMachine, _gameFactory),
                 new WinState(_stateMachine, _gameFactory));

@@ -1,4 +1,5 @@
 using System;
+using Constants;
 using Trell.TwoDTestTask.Infrastructure.Service;
 using UnityEngine;
 using Zenject;
@@ -14,7 +15,7 @@ namespace Trell.TwoDTestTask.Gameplay.Player
         [SerializeField] private float _jumpForce;
         
         private IPlayerInputService _playerInputService;
-        private IGroundCheckService _groundCheckService;
+        private IOverlapCheckService _overlapCheckService;
         
         private bool _isGrounded = true;
 
@@ -29,11 +30,11 @@ namespace Trell.TwoDTestTask.Gameplay.Player
         
         
         [Inject]
-        private void Construct(IPlayerInputService playerInputService, IGroundCheckService groundCheckService)
+        private void Construct(IPlayerInputService playerInputService, IOverlapCheckService overlapCheckService)
         {
-            Debug.Log("Inject" + (groundCheckService == null));
+            Debug.Log("Inject" + (overlapCheckService == null));
             _playerInputService = playerInputService;
-            _groundCheckService = groundCheckService;
+            _overlapCheckService = overlapCheckService;
             Subscribe();
         }
 
@@ -82,7 +83,7 @@ namespace Trell.TwoDTestTask.Gameplay.Player
 
         private void OnJumpButtonClicked()
         {
-            if(_groundCheckService.CheckForGround(_checkGroundPoint.position, _checkGroundRadius))
+            if(_overlapCheckService.CheckForGround(_checkGroundPoint.position, _checkGroundRadius, LayerNames.GroundLayer))
                 _rigidbody2D.AddForce(_jumpForce * Vector2.up, ForceMode2D.Impulse);
         }
 

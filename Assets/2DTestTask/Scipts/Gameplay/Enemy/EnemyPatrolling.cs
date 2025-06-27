@@ -4,7 +4,7 @@ namespace Trell.TwoDTestTask.Gameplay.Enemy
 {
     public class EnemyPatrolling : MonoBehaviour
     {
-     //   [SerializeField] private EnemyMovement _enemyMovement;
+        [SerializeField] private EnemyMovement _enemyMovement;
 
         private Vector3[] _patrollingPositions;
 
@@ -27,7 +27,7 @@ namespace Trell.TwoDTestTask.Gameplay.Enemy
 
         private void UpdateDirection()
         {
-        //    _enemyMovement.SetDirection((_patrollingPositions[_index] - transform.position).normalized);
+            _enemyMovement.SetDirection((_patrollingPositions[_index] - transform.position).normalized);
         }
     }
 }

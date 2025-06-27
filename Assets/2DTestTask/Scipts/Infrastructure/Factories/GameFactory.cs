@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Trell.TwoDTestTask.Gameplay.Bullets;
 using Trell.TwoDTestTask.Gameplay.Bullet;
+using Trell.TwoDTestTask.Gameplay.Enemy;
 using Trell.TwoDTestTask.Gameplay.Player;
 using Trell.TwoDTestTask.Infrastructure.AssetManagment;
 using Trell.TwoDTestTask.Infrastructure.Service;
@@ -37,6 +38,20 @@ namespace Trell.TwoDTestTask.Infrastructure.Factories
                              .Resolve<SceneContextRegistry>()
                              .SceneContexts.LastOrDefault()?.Container 
                              ?? ProjectContext.Instance.Container;
+        }
+
+        
+        
+        public async Task<EnemyFacade> CreateEnemy(EnemyType enemyType, Vector2 position, Vector3[] patrolsPositions)
+        {
+            EnemyData enemyData = await _staticDataService.GetEnemyData(enemyType);
+            GameObject prefab = await _assetProvider.Load<GameObject>(enemyData.Prefab);
+            EnemyFacade spawned = Object.Instantiate(prefab, position, Quaternion.identity).GetComponent<EnemyFacade>();            
+            _container.InjectGameObject(spawned.gameObject);
+            spawned.EnemyMovement.Init(enemyData.Speed);
+            spawned.EnemyPatrolling.Init(patrolsPositions);
+            return spawned;
+
         }
 
         public async Task<BulletFacade> CreateBullet(Vector2 position, int direction)
