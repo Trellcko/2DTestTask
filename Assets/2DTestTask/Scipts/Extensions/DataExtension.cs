@@ -1,7 +1,6 @@
-﻿using Trell.TwoDTestTask.Infrastructure.Saving;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Trell.TwoDTestTask.Extra
+namespace Trell.TwoDTestTask.Extension
 {
     public static class DataExtension
     {

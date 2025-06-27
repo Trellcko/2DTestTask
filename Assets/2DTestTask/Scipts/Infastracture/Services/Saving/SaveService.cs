@@ -1,4 +1,4 @@
-﻿using Trell.TwoDTestTask.Extra;
+﻿using Trell.TwoDTestTask.Extension;
 using UnityEngine;
 
 namespace Trell.TwoDTestTask.Infrastructure.Saving
