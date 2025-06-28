@@ -8,5 +8,6 @@ namespace Trell.TwoDTestTask.Gameplay.Enemy
     {
         [field: SerializeField] public AssetReference Prefab { get; private set; } 
         [field: SerializeField] public float Speed { get; private set; }
+        [field: SerializeField] public float ChasingRadius {get; private set;}
     }
 }

@@ -6,5 +6,7 @@ namespace Trell.TwoDTestTask.Gameplay.Enemy
     { 
         [field: SerializeField] public EnemyMovement EnemyMovement { get; private set; }
         [field: SerializeField] public EnemyPatrolling EnemyPatrolling { get; private set; }
+        [field: SerializeField] public EnemyDangerLabel EnemyDangerLabel { get; private set; }
+        [field: SerializeField] public EnemyChasing EnemyChasing { get; private set; }
     }
 }

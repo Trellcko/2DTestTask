@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Trell.TwoDTestTask.Gameplay.Bullet
 {
@@ -6,6 +7,8 @@ namespace Trell.TwoDTestTask.Gameplay.Bullet
     {
         [SerializeField] private BulletCollisionEventInvoker _bulletCollisionEventInvoker;
 
+        public static event Action DestroyedByGround;
+        
         private void OnEnable()
         {
             _bulletCollisionEventInvoker.GroundCollided += OnGroundCollided;
@@ -18,6 +21,7 @@ namespace Trell.TwoDTestTask.Gameplay.Bullet
 
         private void OnGroundCollided()
         {
+            DestroyedByGround?.Invoke();
             Destroy(transform.parent.gameObject);
         }
     }

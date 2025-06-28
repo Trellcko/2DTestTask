@@ -17,8 +17,28 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 84b1aa349b0682a45a6a37c5c7a29a90
   m_SerializeEntries:
+  - m_GUID: 0d185fbdb1c42da4597c7c96ce281098
+    m_Address: WinPopup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e380b89ff8ec914abb3894654559bae
+    m_Address: LevelDataList
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 36ebc22e1fc7c464eb6304764417ebbc
     m_Address: Player
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b3f4b0940f52fb41b0df34e799f71a2
+    m_Address: LosePopup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 623e17622df3e9b488b09d2abfda3273
+    m_Address: LevelEnvrimoment1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -29,6 +49,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7b72ab1b1568e5c409b2534f76a81e96
     m_Address: Bullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9407acfd7c339504c9dccfbc3e17cdb2
+    m_Address: PausePopup
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

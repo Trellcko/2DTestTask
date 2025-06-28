@@ -3,6 +3,7 @@
     public interface ILevelIndexService
     {
         int LevelIndex { get; }
+        int LevelValue { get; }
         void SetLevelIndex(int levelIndex);
     }
 }

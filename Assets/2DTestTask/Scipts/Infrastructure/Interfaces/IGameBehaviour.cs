@@ -3,5 +3,6 @@
     public interface IGameBehaviour
     {
         void LoadCurrentLevel();
+        void LoadMainMenu();
     }
 }

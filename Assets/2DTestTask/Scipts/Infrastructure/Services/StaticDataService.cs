@@ -19,9 +19,9 @@ namespace Trell.TwoDTestTask.Infrastructure.Service.Infrastructure
             _assetProvider = assetProvider;
         }
 
-        public async Task<LevelData> GetLevelData(int level)
+        public async Task<LevelDataList> GetLevelData()
         {
-            return (LevelData) await _assetProvider.Load<ScriptableObject>(AddressableNames.LevelData + level);
+            return (LevelDataList) await _assetProvider.Load<ScriptableObject>(AddressableNames.LevelData);
         }
         public async Task<EnemyData> GetEnemyData(EnemyType enemyType)
         {

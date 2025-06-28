@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Trell.TwoDTestTask.Infrastructure.Service.UI
+namespace Trell.TwoDTestTask.UI
 {
     [RequireComponent(typeof(Button))]
     public class ButtonWrapper : MonoBehaviour, IPointerDownHandler, IPointerUpHandler

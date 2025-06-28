@@ -16,14 +16,21 @@ namespace Trell.TwoDTestTask.Infrastructure.Installer
             BindAssetProvider();
             BindStaticDataService();
             BindGameFactory();
+            BindPopupFactory();
             BindLevelIndexService();
             BindGameBehaiour();
         }
 
+        private void BindPopupFactory()
+        {
+            Container.Bind<IPopupFactory>()
+                .To<PopupFactory>()
+                .AsSingle();
+        }
+
         private void BindLevelIndexService()
         {
-            Container.Bind<ILevelIndexService>()
-                .To<LevelIndexService>()
+            Container.BindInterfacesTo<LevelIndexService>()
                 .AsSingle();
         }
 

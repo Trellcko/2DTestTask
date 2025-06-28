@@ -1,6 +1,6 @@
 using System;
+using Trell.TwoDTestTask.Gameplay.Enemy;
 using UnityEngine;
-using Zenject.SpaceFighter;
 
 namespace Trell.TwoDTestTask.Gameplay.Bullet
 {

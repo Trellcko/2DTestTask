@@ -1,5 +1,5 @@
 using System;
-using Trell.TwoDTestTask.Infrastructure.Service.UI;
+using Trell.TwoDTestTask.UI;
 using UnityEngine;
 
 namespace Trell.TwoDTestTask.Infrastructure.Service

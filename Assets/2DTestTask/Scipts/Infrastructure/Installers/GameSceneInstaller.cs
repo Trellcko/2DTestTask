@@ -12,12 +12,19 @@ namespace Trell.TwoDTestTask.Infrastructure.Installer
         {
             PlayerInputBind();
             CheckingGroundServiceBind();
+            PauseServiceBind();
+        }
+
+        private void PauseServiceBind()
+        {
+            Container.BindInterfacesTo<SimplePauseService>()
+                .AsSingle();
         }
 
         private void CheckingGroundServiceBind()
         {
-            Container.Bind<IOverlapCheckService>()
-                .To<OverlapCheckService>()
+            Container.Bind<IPhysicCheckService>()
+                .To<PhysicCheckService>()
                 .AsSingle();
         }
 

@@ -16,7 +16,7 @@ namespace Trell.TwoDTestTask.Gameplay.Player
         public int MaxBulletCount { get; private set; } = 3;
         public int CurrentBulletCount { get; private set; }
 
-        public event Action CurrentBulletCountChanged; 
+        public event Action BulletCountChanged; 
         
         [Inject]
         private void Construct(IGameFactory gameFactory, IPlayerInputService playerInputService)
@@ -58,7 +58,7 @@ namespace Trell.TwoDTestTask.Gameplay.Player
                 return;
             _gameFactory.CreateBullet(_shootPoint.position, -(int)transform.parent.localScale.x);
             CurrentBulletCount--;
-            CurrentBulletCountChanged?.Invoke();
+            BulletCountChanged?.Invoke();
         }
     }
 }

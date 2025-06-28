@@ -5,7 +5,7 @@ using Trell.TwoDTestTask.Infrastructure.Factories;
 using UnityEngine;
 using Zenject;
 
-namespace Trell.TwoDTestTask.Infrastructure.Service.UI
+namespace Trell.TwoDTestTask.UI
 {
     public class BulletCounter : MonoBehaviour
     {
@@ -31,7 +31,7 @@ namespace Trell.TwoDTestTask.Infrastructure.Service.UI
         {
             if (_playerShooting)
             {
-                _playerShooting.CurrentBulletCountChanged += UpdateText;
+                _playerShooting.BulletCountChanged += UpdateText;
             }
             else
             {
@@ -42,7 +42,7 @@ namespace Trell.TwoDTestTask.Infrastructure.Service.UI
         private void OnDisable()
         {
             if(_playerShooting)
-                _playerShooting.CurrentBulletCountChanged -= UpdateText;
+                _playerShooting.BulletCountChanged -= UpdateText;
             
             if(_gameFactory != null)
                 _gameFactory.PlayerCreated -= OnPlayerCreated;
@@ -53,7 +53,7 @@ namespace Trell.TwoDTestTask.Infrastructure.Service.UI
             _gameFactory.PlayerCreated -= OnPlayerCreated;
             _playerShooting = obj.PlayerShooting;
             UpdateText();
-            _playerShooting.CurrentBulletCountChanged += UpdateText;
+            _playerShooting.BulletCountChanged += UpdateText;
         }
 
         private void UpdateText()

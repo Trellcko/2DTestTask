@@ -11,6 +11,6 @@ namespace Trell.TwoDTestTask.Infrastructure.Service
         Task<PlayerData> GetPlayerData();
         Task<BulletData> GetBulletData();
         Task<EnemyData> GetEnemyData(EnemyType enemyType);
-        Task<LevelData> GetLevelData(int level);
+        Task<LevelDataList> GetLevelData();
     }
 }

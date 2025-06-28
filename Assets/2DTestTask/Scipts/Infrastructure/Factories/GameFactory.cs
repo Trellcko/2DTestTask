@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Trell.TwoDTestTask.Extension;
 using Trell.TwoDTestTask.Gameplay.Bullets;
 using Trell.TwoDTestTask.Gameplay.Bullet;
 using Trell.TwoDTestTask.Gameplay.Enemy;
@@ -21,6 +23,9 @@ namespace Trell.TwoDTestTask.Infrastructure.Factories
         private DiContainer _container;
         public PlayerFacade PlayerFacade { get; private set; }
 
+        public IReadOnlyList<EnemyFacade> SpawnedEnemies => _spawnedEnemies;
+
+        private readonly List<EnemyFacade> _spawnedEnemies = new();
 
         [Inject]
         public GameFactory(DiContainer container, IAssetProvider assetProvider, IStaticDataService staticDataService)
@@ -34,10 +39,7 @@ namespace Trell.TwoDTestTask.Infrastructure.Factories
 
         public void RefreshContainer()
         {
-                _container = ProjectContext.Instance.Container
-                             .Resolve<SceneContextRegistry>()
-                             .SceneContexts.LastOrDefault()?.Container 
-                             ?? ProjectContext.Instance.Container;
+            _container = ContainerExtension.GetSceneContextContainer();
         }
 
         
@@ -50,6 +52,8 @@ namespace Trell.TwoDTestTask.Infrastructure.Factories
             _container.InjectGameObject(spawned.gameObject);
             spawned.EnemyMovement.Init(enemyData.Speed);
             spawned.EnemyPatrolling.Init(patrolsPositions);
+            spawned.EnemyChasing.Init(enemyData.ChasingRadius);
+            _spawnedEnemies.Add(spawned);
             return spawned;
 
         }

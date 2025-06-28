@@ -19,8 +19,8 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   <EnemyConfig>k__BackingField:
-  - <SpawnPosition>k__BackingField: {x: 0, y: 0, z: 0}
+  - <SpawnPosition>k__BackingField: {x: 0, y: -1.2, z: 0}
     <Positions>k__BackingField:
-    - {x: 5, y: 3, z: 0}
-    - {x: 0, y: 0, z: 0}
+    - {x: 5, y: -1.2, z: 0}
+    - {x: 0, y: -1.2, z: 0}
     <Type>k__BackingField: 0

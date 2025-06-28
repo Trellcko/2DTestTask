@@ -18,3 +18,4 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   <Speed>k__BackingField: 1.5
+  <ChasingRadius>k__BackingField: 1.5
