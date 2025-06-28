@@ -16,11 +16,12 @@ namespace Trell.TwoDTestTask.Infrastructure.Service
         public bool CheckForObstacleBetweenObjects(Vector2 position, Vector2 target, float maxDistance, params LayerMask[] obstacles)
         {
             float distance = Vector2.Distance(position, target);
-            Debug.Log(distance);
             if (distance > maxDistance)
                 return true;
 
-            return Physics2D.RaycastNonAlloc(position, target, _hits, maxDistance, GetLayerMask(obstacles)) > 0;
+            int raycastNonAlloc = Physics2D.RaycastNonAlloc(position,  (target - position).normalized, _hits, distance, GetLayerMask(obstacles));
+            Debug.Log(_hits[0].transform?.name);
+            return raycastNonAlloc > 0;
         }
 
         private int GetLayerMask(LayerMask[] layerMask)

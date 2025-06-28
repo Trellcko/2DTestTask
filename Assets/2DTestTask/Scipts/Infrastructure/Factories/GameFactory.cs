@@ -24,8 +24,10 @@ namespace Trell.TwoDTestTask.Infrastructure.Factories
         public PlayerFacade PlayerFacade { get; private set; }
 
         public IReadOnlyList<EnemyFacade> SpawnedEnemies => _spawnedEnemies;
-
+        public IReadOnlyList<BulletFacade> SpawnedBullets => _spawnedBullets;
+        
         private readonly List<EnemyFacade> _spawnedEnemies = new();
+        private readonly List<BulletFacade> _spawnedBullets = new();
 
         [Inject]
         public GameFactory(DiContainer container, IAssetProvider assetProvider, IStaticDataService staticDataService)
@@ -65,6 +67,7 @@ namespace Trell.TwoDTestTask.Infrastructure.Factories
             BulletFacade spawned = Object.Instantiate(prefab, position, Quaternion.identity).GetComponent<BulletFacade>();
             _container.InjectGameObject(spawned.gameObject);
             spawned.BulletMovement.Init(playerData.Speed, direction);
+            _spawnedBullets.Add(spawned);
             return spawned;
         }
         
@@ -83,6 +86,8 @@ namespace Trell.TwoDTestTask.Infrastructure.Factories
 
         public void CleanUp()
         {
+            _spawnedBullets.Clear();
+            _spawnedEnemies.Clear();
             _assetProvider.CleanUp();
         }
 

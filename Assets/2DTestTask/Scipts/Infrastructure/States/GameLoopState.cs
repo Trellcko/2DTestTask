@@ -56,7 +56,8 @@ namespace Trell.TwoDTestTask.Infrastructure.States
 
         private void OnBulletCountChanged()
         {
-            if(_gameFactory.PlayerFacade.PlayerShooting.CurrentBulletCount < 1)
+            if(_gameFactory.PlayerFacade.PlayerShooting.CurrentBulletCount < 1 && 
+               _gameFactory.SpawnedBullets.Count(x =>  x && x.enabled) == 1)
                 GoToState<LostState>();
         }
 

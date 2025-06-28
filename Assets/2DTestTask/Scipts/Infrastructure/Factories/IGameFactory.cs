@@ -12,6 +12,7 @@ namespace Trell.TwoDTestTask.Infrastructure.Factories
     {
         public PlayerFacade PlayerFacade { get; }
         IReadOnlyList<EnemyFacade> SpawnedEnemies { get; }
+        IReadOnlyList<BulletFacade> SpawnedBullets { get; }
         public event Action<PlayerFacade> PlayerCreated;
         
         public Task<PlayerFacade> CreatePlayer(Vector2 position); 
